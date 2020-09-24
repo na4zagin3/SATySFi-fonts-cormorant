@@ -1,0 +1,84 @@
+@require: stdjabook
+@require: code
+@require: itemize
+
+@require: lipsum/lipsum
+
+let-inline ctx \set-non-cjk-font name it =
+  let ctx =
+    ctx |> set-font Latin (name, 1., 0.)
+        |> set-font OtherScript (name, 1., 0.)
+  in
+  read-inline ctx it
+
+let-block +specimen font-name name = '<
+    +p {
+      \set-non-cjk-font(font-name){
+        #name;
+      }
+    }
+    +p {
+      \set-non-cjk-font(font-name){
+        ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+        \lipsum(1);
+      }
+    }
+  >
+
+in
+
+document (|
+  title = {\SATySFi;-fonts-cormorant};
+  author = {\@na4zagin3};
+  show-title = true;
+  show-toc = false;
+|) '<
+  +p {
+    このパッケージはCormorantフォント\code(`https://github.com/CatharsisFonts/Cormorant`);を提供する。
+  }
++specimen(`fonts-cormorant:Cormorant-Bold`){Cormorant-Bold}
++specimen(`fonts-cormorant:Cormorant-BoldItalic`){Cormorant-BoldItalic}
++specimen(`fonts-cormorant:Cormorant-Italic`){Cormorant-Italic}
++specimen(`fonts-cormorant:Cormorant-Light`){Cormorant-Light}
++specimen(`fonts-cormorant:Cormorant-LightItalic`){Cormorant-LightItalic}
++specimen(`fonts-cormorant:Cormorant-Medium`){Cormorant-Medium}
++specimen(`fonts-cormorant:Cormorant-MediumItalic`){Cormorant-MediumItalic}
++specimen(`fonts-cormorant:Cormorant-Regular`){Cormorant-Regular}
++specimen(`fonts-cormorant:Cormorant-SemiBold`){Cormorant-SemiBold}
++specimen(`fonts-cormorant:Cormorant-SemiBoldItalic`){Cormorant-SemiBoldItalic}
++specimen(`fonts-cormorant:CormorantGaramond-Bold`){CormorantGaramond-Bold}
++specimen(`fonts-cormorant:CormorantGaramond-BoldItalic`){CormorantGaramond-BoldItalic}
++specimen(`fonts-cormorant:CormorantGaramond-Italic`){CormorantGaramond-Italic}
++specimen(`fonts-cormorant:CormorantGaramond-Light`){CormorantGaramond-Light}
++specimen(`fonts-cormorant:CormorantGaramond-LightItalic`){CormorantGaramond-LightItalic}
++specimen(`fonts-cormorant:CormorantGaramond-Medium`){CormorantGaramond-Medium}
++specimen(`fonts-cormorant:CormorantGaramond-MediumItalic`){CormorantGaramond-MediumItalic}
++specimen(`fonts-cormorant:CormorantGaramond-Regular`){CormorantGaramond-Regular}
++specimen(`fonts-cormorant:CormorantGaramond-SemiBold`){CormorantGaramond-SemiBold}
++specimen(`fonts-cormorant:CormorantGaramond-SemiBoldItalic`){CormorantGaramond-SemiBoldItalic}
++specimen(`fonts-cormorant:CormorantInfant-Bold`){CormorantInfant-Bold}
++specimen(`fonts-cormorant:CormorantInfant-BoldItalic`){CormorantInfant-BoldItalic}
++specimen(`fonts-cormorant:CormorantInfant-Italic`){CormorantInfant-Italic}
++specimen(`fonts-cormorant:CormorantInfant-Light`){CormorantInfant-Light}
++specimen(`fonts-cormorant:CormorantInfant-LightItalic`){CormorantInfant-LightItalic}
++specimen(`fonts-cormorant:CormorantInfant-Medium`){CormorantInfant-Medium}
++specimen(`fonts-cormorant:CormorantInfant-MediumItalic`){CormorantInfant-MediumItalic}
++specimen(`fonts-cormorant:CormorantInfant-Regular`){CormorantInfant-Regular}
++specimen(`fonts-cormorant:CormorantInfant-SemiBold`){CormorantInfant-SemiBold}
++specimen(`fonts-cormorant:CormorantInfant-SemiBoldItalic`){CormorantInfant-SemiBoldItalic}
++specimen(`fonts-cormorant:CormorantSC-Bold`){CormorantSC-Bold}
++specimen(`fonts-cormorant:CormorantSC-Light`){CormorantSC-Light}
++specimen(`fonts-cormorant:CormorantSC-Medium`){CormorantSC-Medium}
++specimen(`fonts-cormorant:CormorantSC-Regular`){CormorantSC-Regular}
++specimen(`fonts-cormorant:CormorantSC-SemiBold`){CormorantSC-SemiBold}
++specimen(`fonts-cormorant:CormorantUnicase-Bold`){CormorantUnicase-Bold}
++specimen(`fonts-cormorant:CormorantUnicase-Light`){CormorantUnicase-Light}
++specimen(`fonts-cormorant:CormorantUnicase-Medium`){CormorantUnicase-Medium}
++specimen(`fonts-cormorant:CormorantUnicase-Regular`){CormorantUnicase-Regular}
++specimen(`fonts-cormorant:CormorantUnicase-SemiBold`){CormorantUnicase-SemiBold}
++specimen(`fonts-cormorant:CormorantUpright-Bold`){CormorantUpright-Bold}
++specimen(`fonts-cormorant:CormorantUpright-Light`){CormorantUpright-Light}
++specimen(`fonts-cormorant:CormorantUpright-Medium`){CormorantUpright-Medium}
++specimen(`fonts-cormorant:CormorantUpright-Regular`){CormorantUpright-Regular}
++specimen(`fonts-cormorant:CormorantUpright-SemiBold`){CormorantUpright-SemiBold}
+>
